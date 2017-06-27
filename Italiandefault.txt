@@ -1,0 +1,115 @@
+{	
+	"V": ["Problem_in_Italy", "Contagion_spreads_to_rest", "ECB_relaunch_SMP", "Crisis_spreads_to_banking_system", "Eurozone_stuck_in_recession","ECB_responds_to_crisis","Austerity_fatigue_set_in","UKrates","UKequities"],
+	"E": [["Problem_in_Italy", "Contagion_spreads_to_rest"],
+		["Problem_in_Italy", "Crisis_spreads_to_banking_system"],
+		["Problem_in_Italy", "ECB_relaunch_SMP"],
+		["Contagion_spreads_to_rest", "Crisis_spreads_to_banking_system"]
+		["ECB_relaunch_SMP", "Crisis_spreads_to_banking_system"],
+		["Crisis_spreads_to_banking_system", "Eurozone_stuck_in_recession"],
+		["Crisis_spreads_to_banking_system", "Austerity_fatigue_set_in"],
+		["Crisis_spreads_to_banking_system", "ECB_responds_to_crisis"],
+		["Eurozone_stuck_in_recession", "UKrates"],
+		["Eurozone_stuck_in_recession", "UKequities"],
+		["Austerity_fatigue_set_in", "UKrates"],
+		["Austerity_fatigue_set_in", "UKequities"],
+		["ECB_responds_to_crisis", "Eurozone_stuck_in_recession"],
+		["Crisis_spreads_to_banking_system", "UKrates"],
+		["Crisis_spreads_to_banking_system", "UKequities"]],
+	"Vdata": {
+		"Problem_in_Italy": {
+			"ord": 0,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": None,
+			"children": ["Contagion_spreads_to_rest", "ECB_relaunch_SMP","Crisis_spreads_to_banking_system"],
+			"cprob": {
+			}
+		},
+		
+		"Contagion_spreads_to_rest": {
+			"ord": 1,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["Problem_in_Italy"],
+			"children": ["Crisis_spreads_to_banking_system"],
+			"cprob": {
+			}
+		},
+		
+		"ECB_relaunch_SMP": {
+			"ord": 2,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["Problem_in_Italy"],
+			"children": ["Crisis_spreads_to_banking_system"],
+			"cprob": {
+			}
+		},
+
+		"Crisis_spreads_to_banking_system": {
+			"ord": 3,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["Problem_in_Italy", "Contagion_spreads_to_rest", "ECB_relaunch_SMP"],
+			"children": ["Eurozone_stuck_in_recession","ECB_responds_to_crisis","Austerity_fatigue_set_in","UKrates","UKequities"],
+			"cprob": {
+				
+            }
+		},
+		
+		"Eurozone_stuck_in_recession": {
+			"ord": 4,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["Crisis_spreads_to_banking_system"],
+			"children": ["UKrates","UKequities"],
+			"cprob": {
+				
+            }
+		},
+		
+		"Austerity_fatigue_set_in": {
+			"ord": 5,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["Crisis_spreads_to_banking_system"],
+			"children": ["UKrates","UKequities"],
+			"cprob": {
+				
+            }
+		},
+
+		"ECB_responds_to_crisis": {
+			"ord": 6,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["Crisis_spreads_to_banking_system"],
+			"children": ["Eurozone_stuck_in_recession"],
+			"cprob": {
+				
+            }
+		},
+
+		"UKrates": {
+			"ord": 7,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["Eurozone_stuck_in_recession","Crisis_spreads_to_banking_system","Austerity_fatigue_set_in"],
+			"children": None,
+			"cprob": {
+				
+            }
+		},
+
+		"UKequities": {
+			"ord": 8,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["Eurozone_stuck_in_recession","Crisis_spreads_to_banking_system","Austerity_fatigue_set_in"],
+			"children": None,
+			"cprob": {
+				
+            }
+		},
+	}
+}
