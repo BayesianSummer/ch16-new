@@ -1,0 +1,160 @@
+{	
+	"V": ["A_Sovereign_nears_default_and_no_rescue_package", "B_Distressed_Eurpoean_banks", "C_Distressed_UK_banks", "D_QE2_for_UK", "E_Major_readjustment_of_risk_premia_for_UK_assets","F_Government_rescue_of_bank","G_Restriction_of_credit_to_UK_economy_and_UK_hous_price_fall","H_UK_Coroprate_credit_spreads","K_UK_equity_prices_fall","L_Gilts_prices_rally"],
+	"E": [["A_Sovereign_nears_default_and_no_rescue_package", "B_Distressed_Eurpoean_banks"],
+		["A_Sovereign_nears_default_and_no_rescue_package", "C_Distressed_UK_banks"],
+		["A_Sovereign_nears_default_and_no_rescue_package","E_Major_readjustment_of_risk_premia_for_UK_assets"],
+		["B_Distressed_Eurpoean_banks", "C_Distressed_UK_banks"],
+		["C_Distressed_UK_banks","D_QE2_for_UK" ],
+		["B_Distressed_Eurpoean_banks","E_Major_readjustment_of_risk_premia_for_UK_assets"],
+		["C_Distressed_UK_banks","E_Major_readjustment_of_risk_premia_for_UK_assets"],
+		["C_Distressed_UK_banks","F_Government_rescue_of_bank"],
+		["C_Distressed_UK_banks","G_Restriction_of_credit_to_UK_economy_and_UK_hous_price_fall"],
+		["D_QE2_for_UK","K_UK_equity_prices_fall"],
+		["D_QE2_for_UK","L_Gilts_prices_rally"],
+		["E_Major_readjustment_of_risk_premia_for_UK_assets","H_UK_Coroprate_credit_spreads"],
+		["E_Major_readjustment_of_risk_premia_for_UK_assets","K_UK_equity_prices_fall"],
+		["E_Major_readjustment_of_risk_premia_for_UK_assets","L_Gilts_prices_rally"],
+		["F_Government_rescue_of_bank","L_Gilts_prices_rally"],
+		["G_Restriction_of_credit_to_UK_economy_and_UK_hous_price_fall","K_UK_equity_prices_fall"]],
+	"Vdata": {
+            
+            "L_Gilts_prices_rally": {
+			"ord": 9,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["D_QE2_for_UK","E_Major_readjustment_of_risk_premia_for_UK_assets","F_Government_rescue_of_bank"],
+			"children": None,
+			"cprob": {
+                    "['1','1','0']": [.2,.8],
+                    "['0','1','0']": [.7,.3],
+                    "['1','0','0']": [.25,.75],
+                    "['0','0','0']": [.9,.1],
+                    "['1','1','1']": [.9,.1],
+                    "['0','1','1']": [.95,.05],
+                    "['1','0','1']": [.925,.075],
+                    "['0','0','1']": [.99,.01]	
+            }
+		},
+            
+            "K_UK_equity_prices_fall": {
+			"ord": 8,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["D_QE2_for_UK", "E_Major_readjustment_of_risk_premia_for_UK_assets", "G_Restriction_of_credit_to_UK_economy_and_UK_hous_price_fall"],
+			"children": None,
+			"cprob": {
+                    "['0','1','1']": [.1, .9],
+                    "['0','0','1']": [.65, .35],
+                    "['0','1','0']": [.7, .3],
+                    "['0','0','0']": [.95, .05],
+                    "['1','1','1']": [.2, .8],
+                    "['1','0','1']": [.75, .25],
+                    "['1','1','0']": [.4, .6],
+                    "['1','0','0']": [.975, .025]
+            }
+		},
+            
+            "H_UK_Coroprate_credit_spreads": {
+			"ord": 7,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["E_Major_readjustment_of_risk_premia_for_UK_assets"],
+			"children": None,
+			"cprob": {
+                    "['1']": [.2, .8],
+                    "['0']": [.9, .1]
+            }
+		},
+            
+            "G_Restriction_of_credit_to_UK_economy_and_UK_hous_price_fall": {
+			"ord": 6,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["C_Distressed_UK_banks"],
+			"children": ["K_UK_equity_prices_fall"],
+			"cprob": {
+                    "['1']": [.2, .8],
+                    "['0']": [.9, .1]    
+            }
+		},
+            
+             "F_Government_rescue_of_bank": {
+			"ord": 5,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["C_Distressed_UK_banks"],
+			"children": ["L_Gilts_prices_rally"],
+			"cprob": {
+                    "['1']": [.3, .7],
+                    "['0']": [.9, .1]    
+            }
+		},
+            
+            "E_Major_readjustment_of_risk_premia_for_UK_assets": {
+			"ord": 4,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["A_Sovereign_nears_default_and_no_rescue_package", "B_Distressed_Eurpoean_banks", "C_Distressed_UK_banks"],
+			"children": ["H_UK_Coroprate_credit_spreads","K_UK_equity_prices_fall","L_Gilts_prices_rally"],
+			"cprob": {
+                    "['1','1','1']": [.01, .99],
+                    "['1','0','0']": [.4, .6],
+                    "['1','0','1']": [.1, .9],
+                    "['1','1','0']": [.25, .75],
+                    "['0','0','0']": [.975, .025],
+                    "['0','0','1']": [.2, .8],
+                    "['0','1','0']": [.5, .5],
+                    "['0','1','1']": [.1, .9]
+            }
+		},
+            
+            "D_QE2_for_UK": {
+			"ord": 3,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["C_Distressed_UK_banks"],
+			"children": ["K_UK_equity_prices_fall","L_Gilts_prices_rally"],
+			"cprob": {
+                    "['1']": [.7, .3],
+                    "['0']": [.9, .1]    
+            }
+		},
+            
+            "C_Distressed_UK_banks": {
+			"ord": 2,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["A_Sovereign_nears_default_and_no_rescue_package","B_Distressed_Eurpoean_banks"],
+			"children": ["D_QE2_for_UK","E_Major_readjustment_of_risk_premia_for_UK_assets","F_Government_rescue_of_bank","G_Restriction_of_credit_to_UK_economy_and_UK_hous_price_fall"],
+			"cprob": {
+                    "['1','1']": [.6, .4],
+                    "['0','1']": [.95, .05],
+                    "['1','0']": [.85, .15],
+                    "['0','0']": [.995, .005]
+			}
+		},
+            
+             "B_Distressed_Eurpoean_banks": {
+			"ord": 1,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": ["A_Sovereign_nears_default_and_no_rescue_package"],
+			"children": ["C_Distressed_UK_banks","E_Major_readjustment_of_risk_premia_for_UK_assets"],
+			"cprob": {
+                    "['0']": [.9795, .0205],
+                    "['1']": [.8, .2]
+			}
+		},
+            
+            "A_Sovereign_nears_default_and_no_rescue_package": {
+             "ord": 0,
+			"numoutcomes": 2,
+			"vals": ["0", "1"],
+			"parents": None,
+			"children": ["B_Distressed_Eurpoean_banks","C_Distressed_UK_banks", "E_Major_readjustment_of_risk_premia_for_UK_assets"],
+			"cprob": [.975,.025]
+		}	
+            
+                              
+  }
+}
