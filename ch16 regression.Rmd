@@ -1,0 +1,31 @@
+---
+title: "bn"
+author: "Liwei Wang"
+date: "2017/7/9"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+setwd("/Users/OrzinaryW/Desktop/BN_research")
+stockprice<-read.csv("STOCKPRICE.csv",header = TRUE)
+stockprice<-(stockprice[1:251,] - stockprice[-1,])/stockprice[-1,]
+GUKG2<-read.csv("GUKG2.csv",header = TRUE)
+GUKG2_<- GUKG2[1:251,2] - GUKG2[-1,2]
+GUKG10<-read.csv("GUKG10.csv",header = TRUE)
+GUKG10<-GUKG10[1:252,]
+GUKG10_<-GUKG10[1:251,2] - GUKG10[-1,2]
+CSI<-read.csv("CSI_A.csv",header = TRUE)
+CSI_ <- CSI[1:251,2] - CSI[-1,2]
+FTSE <- read.csv("FTSE.csv",header = TRUE,skipNul = TRUE)
+FTSE <- FTSE[1:252,]
+FTSE_ <- as.numeric(FTSE$last.price)
+FTSE_ <- log(FTSE_[1:251] / FTSE_[-1]) 
+for(i in 1:101)
+{
+  print(summary(lm(stockprice[,i]~GUKG10_+CSI_+FTSE_)))
+}
+```
